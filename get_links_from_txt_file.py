@@ -2,7 +2,6 @@
 
 import sys
 import os
-import re
 sys.path.insert(0, 'modules')
 import vf_fso
 
@@ -30,7 +29,7 @@ with open(filename_db, mode='r', encoding='utf-8') as fr:
             mfn += 1
         
         if line.startswith('#951'):
-            elements = re.split(r'\^', line)
+            elements = line.split('^')
             for j in elements:
                 if j.startswith('I'):
                     res = j
